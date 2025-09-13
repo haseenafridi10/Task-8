@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Checkbox</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .checkbox {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 17px;
+            user-select: none;
+        }
+        .checkbox input {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+        }
+        .check {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .checkbox:hover input ~ .check {
+            background-color: #ccc;
+        }
+        .checkbox input:checked ~ .check {
+            background-color: #f32121;
+        }
+        .checkbox:hover .check:after {
+            display: block;
+            border-color: rgba(255, 255, 255, 0.6); 
+        }
+        .check:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .checkbox input:checked ~ .check:after {
+            display: block;
+            border-color: white; 
+        }
+        .checkbox .check:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        .checkbox input:focus ~ .check {
+            box-shadow: 0 0 0 4px calc(#f32121/.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <label class="checkbox">Workout
+            <input type="checkbox">
+            <span class="check"></span>
+        </label>
+
+        <label class="checkbox">Meditaion
+            <input type="checkbox">
+            <span class="check"></span>
+        </label>
+
+        <label class="checkbox">Coding
+            <input type="checkbox">
+            <span class="check"></span>
+        </label>
+
+        <label class="checkbox">Sleep
+            <input type="checkbox">
+            <span class="check"></span>
+        </label>
+
+    </div>
+</body>
+</html>
+
